@@ -72,6 +72,9 @@ export const ContactCardImage = styled("div", {
   },
   ["&.linkedin"]: {
     background: "linear-gradient(180deg, #4E73FF 0%, #506CCF 100%)",
+  },
+  ["&.curriculum"]: {
+    background: "linear-gradient(180deg, #f56614 0%, #e78e08 100%)",
   }
 });
 

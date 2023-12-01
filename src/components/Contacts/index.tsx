@@ -1,6 +1,7 @@
 import { Container } from "@/styles/Global";
 import { Text } from "@/styles/Text";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
+import curriculumLogo from "../../assets/curriculos.png";
 
 import {
   ContactSection,
@@ -12,7 +13,7 @@ import {
   ContactCardContent,
 } from "./style";
 
-import { FaWhatsapp, FaEnvelopeOpen, FaLinkedin } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelopeOpen, FaLinkedin, FaFile } from "react-icons/fa";
 import { useRef } from "react";
 import { userData } from "@/utils/userData";
 
@@ -49,8 +50,7 @@ export const Contacts = () => {
                   My Whatsapp
                 </Text>
                 <Text color="grey2" type="body2">
-                  I'm available for a voice chat, let's about creativity
-                  together?
+                  I'm available for a voice chat, let's about creativity together?
                 </Text>
                 <Text
                   as="a"
@@ -82,33 +82,50 @@ export const Contacts = () => {
                   type="body2"
                   target="_blank"
                   href={`mailto=${userData.emailUser}`}
-                  onClick={() =>
-                    (window.location.href = "mailto:nekelpatrick.com")
-                  }
+                  onClick={() => (window.location.href = `mailto:${userData.emailUser}`)}
                 >
                   Send me an email
                 </Text>
               </ContactCardContent>
             </ContactCard>
+
             <ContactCard>
-              <ContactCardImage className="linkedin">
-                <FaLinkedin color="#fff" size={24} />
+              <ContactCardImage className="curriculum">
+                <FaFile color="#fff" size={24} />
               </ContactCardImage>
               <ContactCardContent>
                 <Text type="heading4" color="grey4">
-                  My LinkedIn
+                  My Curriculum
                 </Text>
                 <Text color="grey2" type="body2">
-                  We can create more constant interactions as well as a sharing
-                  network
+                  Unlock my resume for a concise overview of my skills and experience. Dive into the details that make me a valuable asset.
+                  Your next collaboration starts here.
                 </Text>
                 <Text
                   as="a"
                   color="grey2"
                   type="body2"
                   target="_blank"
-                  href={linkedInUrl}
+                  href={`https://docs.google.com/document/d/1HzT4HW60NnHIvpI8xMqZLrNnLcPRMrfHfDrirl9ODvE/edit?usp=sharing`}
                 >
+                  Access my resume now
+                </Text>
+              </ContactCardContent>
+            </ContactCard>
+
+            <ContactCard>
+              <ContactCardImage className="linkedin">
+                <FaLinkedin color="#fff" size={24} />
+              </ContactCardImage>
+
+              <ContactCardContent>
+                <Text type="heading4" color="grey4">
+                  My LinkedIn
+                </Text>
+                <Text color="grey2" type="body2">
+                  We can create more constant interactions as well as a sharing network
+                </Text>
+                <Text as="a" color="grey2" type="body2" target="_blank" href={linkedInUrl}>
                   Go to LinkedIn now
                 </Text>
               </ContactCardContent>

@@ -1,11 +1,4 @@
-import {
-  Project as ProjectWrapper,
-  ProjectTitle,
-  ProjectStack,
-  ProjectStackTech,
-  ProjectLink,
-  ProjectLinks,
-} from "./style";
+import { Project as ProjectWrapper, ProjectTitle, ProjectStack, ProjectStackTech, ProjectLink, ProjectLinks } from "./style";
 
 import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
@@ -26,9 +19,7 @@ export const Project = (): JSX.Element => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(
-        `https://api.github.com/users/${userData.githubUser}/repos?sort=created&direction=desc`
-      );
+      const data = await fetch(`https://api.github.com/users/${userData.githubUser}/repos?sort=created&direction=desc`);
 
       const json = await data.json();
 
@@ -45,12 +36,7 @@ export const Project = (): JSX.Element => {
       {repositories &&
         repositories?.map?.((repository) => (
           <ProjectWrapper key={repository.id}>
-            <ProjectTitle
-              as="h2"
-              type="heading3"
-              css={{ marginBottom: "$3" }}
-              color="grey4"
-            >
+            <ProjectTitle as="h2" type="heading3" css={{ marginBottom: "$3" }} color="grey4">
               {repository.name}
             </ProjectTitle>
 
@@ -67,7 +53,7 @@ export const Project = (): JSX.Element => {
               ) : (
                 <ProjectStackTech>
                   <Text color="grey2" type="body2">
-                    Primary language not identified
+                    TypeScript
                   </Text>
                 </ProjectStackTech>
               )}
@@ -81,10 +67,7 @@ export const Project = (): JSX.Element => {
                 <FaGithub /> Github Code
               </ProjectLink>
               {repository.homepage && (
-                <ProjectLink
-                  target="_blank"
-                  href={repository.homepage}
-                >
+                <ProjectLink target="_blank" href={repository.homepage}>
                   <FaShare /> See demo
                 </ProjectLink>
               )}

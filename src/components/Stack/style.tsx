@@ -49,7 +49,7 @@ export const StackCard = styled("div", {
       opacity: 1,
       top: 0,
       transform: "translateY(-140%)",
-      animation: `${scaleUp} 200ms`,
+      animation: `${scaleUp} 400ms`,
     },
   },
 });
